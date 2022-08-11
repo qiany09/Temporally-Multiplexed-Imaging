@@ -1,21 +1,21 @@
 load('6G_70.mat')
-stack = zeros(270,270,70);
+stack = zeros(250,250,70);
 
 for ii = 1:70
-    currentImage = imread('6G_rsFL1.tif', ii);
+    currentImage = imread('6G_example_downsampled.tif', ii);
     stack(:,:,ii) = currentImage;
 end
 
-composition_image1 = zeros(270,270);
-composition_image2 = zeros(270,270);
-composition_image3 = zeros(270,270);
-composition_image4 = zeros(270,270);
-composition_image5 = zeros(270,270);
-composition_image6 = zeros(270,270);
+composition_image1 = zeros(250,250);
+composition_image2 = zeros(250,250);
+composition_image3 = zeros(250,250);
+composition_image4 = zeros(250,250);
+composition_image5 = zeros(250,250);
+composition_image6 = zeros(250,250);
 
 
-parfor ii = 1:270
-    for jj = 1:270
+parfor ii = 1:250
+    for jj = 1:250
         if stack(ii,jj,1) < 10
             composition_image1(ii,jj) = 0;
             composition_image2(ii,jj) = 0;
